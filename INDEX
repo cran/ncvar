@@ -1,0 +1,10 @@
+ncvar                   High-level R Interface to NetCDF Datasets
+att.def.ncv             Define NetCDF Attribute(s)
+coord.def.ncv           Define a NetCDF Coordinate
+dim.def.ncv             Define NetCDF Dimension(s)
+examples.ncv            Examples
+print.ncv               Print Summary Information About a NetCDF
+                        Dataset
+var.def.ncv             Define a NetCDF Variable
+var.get.ncv             Get a NetCDF Variable
+var.put.ncv             Put a NetCDF Variable
