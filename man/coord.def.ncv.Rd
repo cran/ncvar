@@ -63,7 +63,7 @@ pre <- var.def.ncv("precip", array(1,dim=c(10,5,1,1)), xtype="NC_FLOAT",
             "_FillValue", -998.9) )
 
 ## write to file
-var.put.ncv("/tmp/foo.nc", pre, new=TRUE)
+var.put.ncv(paste(tempdir(),"/foo.nc",sep=""), pre, new=TRUE)
 
 }
 

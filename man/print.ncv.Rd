@@ -35,7 +35,7 @@ The output of this function is almost identical with a \code{"ncdump -h"} call.
 foo.ncv()
 
 ## Read variable
-temp <- var.get.ncv("/tmp/foo.nc", "temperature")
+temp <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "temperature")
 
 print.ncv(temp)
 }

@@ -61,8 +61,8 @@ Note that the order of dimensions is consistent with the R conventions
 ##  Copy data from one file to another
 
 foo.ncv()
-temp <- var.get.ncv("/tmp/foo.nc", "temperature", mode="cf")
-var.put.ncv("/tmp/foo2.nc", temp)
+temp <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "temperature", mode="cf")
+var.put.ncv(paste(tempdir(),"/foo2.nc",sep=""), temp)
 }
 
 \keyword{file}

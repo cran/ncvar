@@ -27,7 +27,7 @@ For internal use only.}
 foo.ncv()
 
 ## Open file
-nc <- open.nc("/tmp/foo.nc", write=TRUE)
+nc <- open.nc(paste(tempdir(),"/foo.nc",sep=""), write=TRUE)
 
 ## Get dimension (id=0)
 dim <- dim.get.ncv(nc, 0)

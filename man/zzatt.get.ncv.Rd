@@ -28,7 +28,7 @@ use only.}
 foo.ncv()
 
 ## Open file
-nc <- open.nc("/tmp/foo.nc")
+nc <- open.nc(paste(tempdir(),"/foo.nc",sep=""))
 
 ## Get attribute
 att <- att.get.ncv(nc, "temperature", 1)

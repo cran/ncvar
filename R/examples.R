@@ -5,7 +5,7 @@
 foo.ncv <- function()
 {
      ##  Create a new NetCDF dataset and define two dimensions
-     nc <- create.nc("/tmp/foo.nc")
+     nc <- create.nc(paste(tempdir(),"/foo.nc",sep=""))
 
      dim.def.nc(nc, "station", 5)
      dim.def.nc(nc, "time", unlim=TRUE)
@@ -54,7 +54,7 @@ ex.pavel.ncv <- function()
 	dim=list(dim1, dim2), 
 	att=list("_FillValue", -99999.9), mvar=list(name) )
 
-    var.put.ncv("/tmp/foo2.nc", temp, verb=T) 
+    var.put.ncv(paste(tempdir(),"/foo2.nc",sep=""), temp, verb=T) 
 }
 
 
@@ -80,8 +80,8 @@ ex.cf5.1.ncv <- function()
 	dim=list(lon, lat, pres, time),
 	att=list("long_name", "zonal wind", "units", "m/s") )
 
-    var.put.ncv("/tmp/foo.nc", xwind, data=FALSE)
-    var <- var.get.ncv("/tmp/foo.nc", "xwind", mode="cf")
+    var.put.ncv(paste(tempdir(),"/foo.nc",sep=""), xwind, data=FALSE)
+    var <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "xwind", mode="cf")
     print.ncv(var)
 
 }
@@ -122,9 +122,9 @@ ex.cf5.2.ncv <- function()
 		    "coordinates", "lon lat"),
 	mvar=list(lon, lat) )
 
-    var.put.ncv("/tmp/foo.nc", var)
+    var.put.ncv(paste(tempdir(),"/foo.nc",sep=""), var)
 
-    var <- var.get.ncv("/tmp/foo.nc", "T", mode="cf")
+    var <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "T", mode="cf")
 
     print.ncv(var)
 
@@ -176,13 +176,13 @@ ex.cf5.6.ncv <- function()
         mvar=list(lon, lat, gmap),
 	gatt=list("Conventions","CF-1.0") )
 
-    var.put.ncv("/tmp/foo.nc", var)
+    var.put.ncv(paste(tempdir(),"/foo.nc",sep=""), var)
 
-    var <- var.get.ncv("/tmp/foo.nc", "T", mode="cf")
+    var <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "T", mode="cf")
 
     print.ncv(var)
 
-    var.put.ncv("/tmp/foo2.nc", var)
+    var.put.ncv(paste(tempdir(),"/foo2.nc",sep=""), var)
 
 }
 
@@ -234,8 +234,8 @@ ex.cf7.2.ncv <- function()
         mvar=list(lon, lat, cell.area),
         gatt=list("Conventions","CF-1.0") )
 
-    var.put.ncv("/tmp/foo.nc", var)
-    var <- var.get.ncv("/tmp/foo.nc", "PS", mode="cfall")
+    var.put.ncv(paste(tempdir(),"/foo.nc",sep=""), var)
+    var <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "PS", mode="cfall")
     print.ncv(var)
-    var.put.ncv("/tmp/foo2.nc", var)
+    var.put.ncv(paste(tempdir(),"/foo2.nc",sep=""), var)
 }

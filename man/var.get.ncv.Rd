@@ -70,7 +70,7 @@ and metadata.}
 ## foo.ncv()
 
 foo.ncv()
-pre <- var.get.ncv("/tmp/foo.nc", "temperature")
+pre <- var.get.ncv(paste(tempdir(),"/foo.nc",sep=""), "temperature")
 
 }
 
